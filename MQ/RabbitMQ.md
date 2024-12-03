@@ -1,6 +1,30 @@
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [RabbitMQ 知识点](#rabbitmq-知识点)
+  - [RabbitMQ 的一些知识点](#rabbitmq-的一些知识点)
+    - [消费者预取](#消费者预取)
+    - [RabbitMQ 基于 AMQP 消息协议](#rabbitmq-基于-amqp-消息协议)
+    - [死信](#死信)
+    - [延时队列](#延时队列)
+      - [RabbitMQ 中的 TTL](#rabbitmq-中的-ttl)
+    - [消息重复消费](#消息重复消费)
+    - [RabbitMQ 的五种消息类型](#rabbitmq-的五种消息类型)
+      - [Hello World](#hello-world)
+      - [Work queues](#work-queues)
+      - [Publish/Subscribe(发布订阅)](#publishsubscribe发布订阅)
+      - [Routing](#routing)
+      - [Topics](#topics)
+  - [RabbitMQ 高频的面试题](#rabbitmq-高频的面试题)
+
+<!-- /code_chunk_output -->
+
 # RabbitMQ 知识点
 
 Date：2024-11-05
+
+author：Cary
 
 RabbitMQ 是消息中间件，常用于异步、削峰、解耦。
 
@@ -17,6 +41,12 @@ RabbitMQ 中有一些术语：
 - 消费者： 一个程序只等待接收消息
 
 ## RabbitMQ 的一些知识点
+
+### 消费者预取
+
+Consumer Prefetch 是消费者在处理消息之前可以预先从队列中获取的消息数量。
+
+RabbitMQ 会根据消费者设置的预取数量来发送消息，消费者处理完一条消息会发送 ack，MQ 会再次发送新的消息给消费者。
 
 ### RabbitMQ 基于 AMQP 消息协议
 
