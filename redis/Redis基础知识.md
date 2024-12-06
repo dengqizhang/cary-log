@@ -1,5 +1,32 @@
 # Redis 基础知识
 
+Date：2024-12-04
+
+作者：Cary
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Redis 基础知识](#redis-基础知识)
+  - [Redis 基础](#redis-基础)
+    - [Redis 基本数据类型](#redis-基本数据类型)
+    - [Redis 的线程模型](#redis-的线程模型)
+    - [什么是缓存击穿、缓存穿透、缓存雪崩？](#什么是缓存击穿-缓存穿透-缓存雪崩)
+      - [缓存穿透](#缓存穿透)
+      - [缓存雪崩](#缓存雪崩)
+      - [缓存击穿](#缓存击穿)
+    - [Redis 的过期策略](#redis-的过期策略)
+      - [过期策略](#过期策略)
+    - [持久化机制](#持久化机制)
+    - [Redis 的高可用](#redis-的高可用)
+    - [Redisson](#redisson)
+    - [MySQL 与 Redis 如何保证双写一致性](#mysql-与-redis-如何保证双写一致性)
+    - [为什么 Redis 6.0 之后改多线程呢？](#为什么-redis-60-之后改多线程呢)
+    - [Redis 的 Hash 冲突怎么办](#redis-的-hash-冲突怎么办)
+
+<!-- /code_chunk_output -->
+
 - 定义
   Redis 是非关系型数据库，以 Key-Value 方式存储，基于内存。
 

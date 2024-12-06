@@ -1,3 +1,9 @@
+# RabbitMQ 知识点
+
+Date：2024-11-05
+
+作者：Cary
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
@@ -19,12 +25,6 @@
   - [RabbitMQ 高频的面试题](#rabbitmq-高频的面试题)
 
 <!-- /code_chunk_output -->
-
-# RabbitMQ 知识点
-
-Date：2024-11-05
-
-author：Cary
 
 RabbitMQ 是消息中间件，常用于异步、削峰、解耦。
 

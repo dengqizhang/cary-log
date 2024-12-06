@@ -234,3 +234,72 @@ java 提供了`java.util.concurrent.Executors`工厂类来创建不同的线程�
 #### 6，反射
 
 反射是一种在运行时动态获取类的信息、访问类的成员变量、方法和构造函数，并调用它们的机制。反射提供了一种强大的方式来实现动态编程，使得程序可以在运行时根据不同的条件执行不同的操作。
+
+## Java8 特性
+
+### StreamAPI
+
+流可以优化代码结构，处理数据更简单。
+
+流可以接收一个数据源并进行聚合操作
+
+#### 流和 Collection 有什么不同？
+
+1，流的操作会返回对象本身，这样操作可以串联成管道，如同流式风格。
+
+2，内部迭代，For-Each 的方式是在集合外部进行迭代，流是通过访问者模式实现了内部迭代。
+
+**实例**：
+
+```
+List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
+List<String> filtered = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
+```
+
+### Lambda 表达式
+
+Lambda 表达式允许将函数当成参数传递给某个方法
+
+语法如下
+
+```
+(parameters) -> expression
+或
+(parameters) ->{ statements; }
+```
+
+parameters 是参数列表，expression 或 { statements; } 是 Lambda 表达式的主体。如果只有一个参数，可以省略括号；如果没有参数，也需要空括号。
+
+实例：
+
+```
+// 使用 Lambda 表达式计算两个数的和
+MathOperation addition = (a, b) -> a + b;
+
+// 调用 Lambda 表达式
+int result = addition.operation(5, 3);
+System.out.println("5 + 3 = " + result);
+
+```
+
+**为什么要使用 Lambda 表达式？**
+
+1，代码会变得更简洁
+
+2， 函数式编程支持
+
+3，可以捕获外部作用域的变量
+
+### 新日期时间 API
+
+### 接口默认方法
+
+声明接口默认方法语法如下：
+
+```
+public interface Vehicle {
+   default void print(){
+      System.out.println("我是一辆车!");
+   }
+}
+```
